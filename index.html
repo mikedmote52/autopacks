@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoPacks — Pre-Built AI Automation Workflows for Your Industry</title>
+<meta name="description" content="Buy ready-made n8n automation workflows built for your industry. Dental offices, contractors, e-commerce, local services. Plug in your API keys and go.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0a0f; --surface: #12121a; --surface-2: #1a1a26; --border: #2a2a3a;
+  --text: #e8e8f0; --text-muted: #8888a0; --accent: #6c5ce7; --accent-light: #a29bfe;
+  --green: #00b894; --orange: #fdcb6e; --blue: #74b9ff; --pink: #fd79a8; --radius: 12px;
+}
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,15,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+nav .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.5px; }
+.logo span { color: var(--accent-light); }
+nav ul { list-style: none; display: flex; gap: 28px; }
+nav ul a { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+nav ul a:hover { color: var(--text); text-decoration: none; }
+.nav-cta { background: var(--accent); color: #fff; padding: 8px 20px; border-radius: 8px; font-weight: 600; font-size: 0.875rem; transition: background 0.2s; }
+.nav-cta:hover { background: #5b4bd5; text-decoration: none; }
+.hero { padding: 140px 0 80px; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(108,92,231,0.12) 0%, transparent 60%); }
+.hero .badge { display: inline-block; background: var(--surface-2); border: 1px solid var(--border); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; color: var(--accent-light); font-weight: 600; margin-bottom: 24px; letter-spacing: 0.5px; }
+.hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -1.5px; max-width: 800px; margin: 0 auto 20px; }
+.hero h1 .gradient { background: linear-gradient(135deg, var(--accent-light), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 580px; margin: 0 auto 36px; }
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: var(--accent); color: #fff; padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 1rem; transition: all 0.2s; border: none; cursor: pointer; }
+.btn-primary:hover { background: #5b4bd5; transform: translateY(-1px); text-decoration: none; }
+.btn-secondary { background: var(--surface-2); color: var(--text); padding: 14px 32px; border-radius: 10px; font-weight: 600; font-size: 1rem; border: 1px solid var(--border); transition: all 0.2s; cursor: pointer; }
+.btn-secondary:hover { border-color: var(--accent); text-decoration: none; }
+.proof { text-align: center; padding: 40px 0 60px; border-bottom: 1px solid var(--border); }
+.proof p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px; }
+.proof-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.proof-stats .stat { text-align: center; }
+.proof-stats .num { font-size: 1.6rem; font-weight: 800; color: var(--accent-light); }
+.proof-stats .label { font-size: 0.8rem; color: var(--text-muted); }
+.how { padding: 80px 0; }
+.section-label { text-transform: uppercase; font-size: 0.75rem; font-weight: 700; color: var(--accent-light); letter-spacing: 2px; margin-bottom: 12px; }
+.section-title { font-size: 2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 48px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+.step-num { width: 36px; height: 36px; border-radius: 8px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; margin-bottom: 16px; }
+.step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+.packs { padding: 80px 0; }
+.pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 48px; }
+.pack { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+.pack:hover { border-color: var(--accent); transform: translateY(-2px); }
+.pack-header { padding: 28px 28px 0; }
+.pack-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px; }
+.pack-icon.dental { background: rgba(116,185,255,0.15); }
+.pack-icon.contractor { background: rgba(253,203,110,0.15); }
+.pack-icon.ecommerce { background: rgba(253,121,168,0.15); }
+.pack-icon.restaurant { background: rgba(0,184,148,0.15); }
+.pack h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+.pack .pack-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 16px; }
+.pack-workflows { padding: 0 28px; }
+.pack-workflows h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 10px; }
+.wf-list { list-style: none; }
+.wf-list li { font-size: 0.84rem; padding: 6px 0; color: var(--text); display: flex; align-items: center; gap: 8px; }
+.wf-list li::before { content: '\2192'; color: var(--accent-light); font-weight: 700; }
+.pack-footer { padding: 20px 28px; margin-top: 16px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.pack-price { font-size: 1.5rem; font-weight: 800; }
+.pack-price span { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+.pack-btn { background: var(--accent); color: #fff; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 0.875rem; border: none; cursor: pointer; transition: background 0.2s; }
+.pack-btn:hover { background: #5b4bd5; text-decoration: none; }
+.coming-soon .pack-btn { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); cursor: default; }
+.pricing { padding: 80px 0; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
+.price-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; position: relative; }
+.price-card.featured { border-color: var(--accent); background: linear-gradient(180deg, rgba(108,92,231,0.08) 0%, var(--surface) 40%); }
+.price-card .tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); padding: 4px 16px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; }
+.price-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+.price-card .price-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
+.price-card .price-amount { font-size: 2.2rem; font-weight: 800; margin-bottom: 4px; }
+.price-card .price-period { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; }
+.price-features { list-style: none; margin-bottom: 28px; }
+.price-features li { font-size: 0.875rem; padding: 6px 0; display: flex; align-items: flex-start; gap: 8px; }
+.price-features li::before { content: '\2713'; color: var(--green); font-weight: 700; }
+.price-btn { display: block; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; width: 100%; }
+.price-btn.primary { background: var(--accent); color: #fff; }
+.price-btn.primary:hover { background: #5b4bd5; text-decoration: none; }
+.price-btn.secondary { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+.price-btn.secondary:hover { border-color: var(--accent); text-decoration: none; }
+.consultant { padding: 80px 0; }
+.consultant-box { background: linear-gradient(135deg, rgba(108,92,231,0.1), rgba(253,121,168,0.08)); border: 1px solid var(--border); border-radius: 16px; padding: 48px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+.consultant-box h2 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; }
+.consultant-box p { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
+.consultant-perks { list-style: none; }
+.consultant-perks li { font-size: 0.9rem; padding: 5px 0; display: flex; align-items: center; gap: 8px; }
+.consultant-perks li::before { content: '\2713'; color: var(--green); font-weight: 700; }
+.consultant-cta { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; text-align: center; }
+.consultant-cta .price-amount { font-size: 2.2rem; font-weight: 800; }
+.consultant-cta .price-period { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; }
+.consultant-cta .btn-primary { display: inline-block; }
+.faq { padding: 80px 0; }
+.faq-list { max-width: 680px; margin: 48px auto 0; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+.faq-item summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--accent-light); }
+.faq-item[open] summary::after { content: '\2212'; }
+.faq-item p { margin-top: 12px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+.final-cta { padding: 80px 0 100px; text-align: center; }
+.final-cta h2 { font-size: 2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+.final-cta p { color: var(--text-muted); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+footer p { font-size: 0.8rem; color: var(--text-muted); }
+footer a { color: var(--accent-light); }
+.modal-overlay { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+.modal-overlay.active { display: flex; }
+.modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; max-width: 480px; width: 90%; position: relative; }
+.modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer; }
+.modal h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+.modal .modal-sub { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px; }
+.form-group input, .form-group select { width: 100%; padding: 10px 14px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); font-size: 0.9rem; font-family: inherit; }
+.form-group input:focus, .form-group select:focus { outline: none; border-color: var(--accent); }
+.form-submit { width: 100%; padding: 12px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.95rem; border: none; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
+.form-submit:hover { background: #5b4bd5; }
+.form-note { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 12px; }
+@media (max-width: 768px) { nav ul { display: none; } .consultant-box { grid-template-columns: 1fr; } .pack-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav><div class="container"><div class="logo">Auto<span>Packs</span></div><ul><li><a href="#packs">Packs</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#consultants">For Consultants</a></li><li><a href="#faq">FAQ</a></li></ul><a href="#packs" class="nav-cta">Browse Packs</a></div></nav>
+
+<section class="hero"><div class="container">
+<div class="badge">PRE-BUILT n8n WORKFLOWS</div>
+<h1>Stop paying $5K for automations you could <span class="gradient">buy for $49</span></h1>
+<p>Production-ready AI automation workflows built for your industry. Download, plug in your API keys, and have them running in an afternoon.</p>
+<div class="hero-buttons"><a href="#packs" class="btn-primary">Browse Workflow Packs</a><a href="#how" class="btn-secondary">How It Works</a></div>
+</div></section>
+
+<section class="proof"><div class="container">
+<p>Trusted by automation professionals and small business operators</p>
+<div class="proof-stats">
+<div class="stat"><div class="num">24+</div><div class="label">Workflows Included</div></div>
+<div class="stat"><div class="num">4</div><div class="label">Industry Verticals</div></div>
+<div class="stat"><div class="num">~2hrs</div><div class="label">Avg. Setup Time</div></div>
+<div class="stat"><div class="num">$0</div><div class="label">Monthly Fees</div></div>
+</div></div></section>
+
+<section class="how" id="how"><div class="container">
+<div class="section-label">How It Works</div>
+<div class="section-title">From download to running in three steps</div>
+<div class="steps">
+<div class="step"><div class="step-num">1</div><h3>Pick Your Pack</h3><p>Choose the workflow pack built for your industry. Each pack includes 4-8 production-tested n8n workflows.</p></div>
+<div class="step"><div class="step-num">2</div><h3>Import &amp; Configure</h3><p>Import the JSON files into your n8n instance. Follow the step-by-step setup guide to connect your API keys and credentials.</p></div>
+<div class="step"><div class="step-num">3</div><h3>Activate &amp; Automate</h3><p>Toggle on your workflows and watch them run. Each pack includes test scenarios so you can verify everything works before going live.</p></div>
+<div class="step"><div class="step-num">?</div><h3>Need Help?</h3><p>Every pack includes a video walkthrough. Need custom setup? Book a 1:1 implementation session with our team.</p></div>
+</div></div></section>
+
+<section class="packs" id="packs"><div class="container">
+<div class="section-label">Workflow Packs</div>
+<div class="section-title">Built for your industry, tested in production</div>
+<div class="pack-grid">
+
+<div class="pack"><div class="pack-header"><div class="pack-icon dental">&#x1F9B7;</div><h3>Dental Office AI Stack</h3><p class="pack-desc">Automate patient communications, reviews, recalls, and front-desk operations for dental practices.</p></div>
+<div class="pack-workflows"><h4>Included Workflows</h4><ul class="wf-list">
+<li>Missed-call text-back with appointment booking</li>
+<li>Post-visit review request sequence</li>
+<li>AI review response generator (Google/Yelp)</li>
+<li>Patient recall reminder pipeline</li>
+<li>New patient intake form processor</li>
+<li>Insurance verification pre-check</li>
+</ul></div>
+<div class="pack-footer"><div class="pack-price">$49 <span>one-time</span></div><a href="#" class="pack-btn" onclick="openModal('dental')">Get This Pack</a></div></div>
+
+<div class="pack"><div class="pack-header"><div class="pack-icon contractor">&#x1F528;</div><h3>Contractor Lead Pipeline</h3><p class="pack-desc">Capture, qualify, and follow up on leads automatically for home service and contracting businesses.</p></div>
+<div class="pack-workflows"><h4>Included Workflows</h4><ul class="wf-list">
+<li>Web form to CRM lead capture + auto-response</li>
+<li>AI lead qualification &amp; scoring</li>
+<li>Automated estimate follow-up sequence</li>
+<li>Job completion review request</li>
+<li>Dead lead reactivation campaign</li>
+<li>Google Business Profile post scheduler</li>
+</ul></div>
+<div class="pack-footer"><div class="pack-price">$49 <span>one-time</span></div><a href="#" class="pack-btn" onclick="openModal('contractor')">Get This Pack</a></div></div>
+
+<div class="pack"><div class="pack-header"><div class="pack-icon ecommerce">&#x1F4E6;</div><h3>E-commerce Ops Automator</h3><p class="pack-desc">Streamline returns, customer support, inventory alerts, and marketing for Shopify and WooCommerce stores.</p></div>
+<div class="pack-workflows"><h4>Included Workflows</h4><ul class="wf-list">
+<li>AI customer support email responder</li>
+<li>Returns &amp; refund processing pipeline</li>
+<li>Low inventory alert + reorder trigger</li>
+<li>Post-purchase review request sequence</li>
+<li>Abandoned cart recovery workflow</li>
+<li>Social media content scheduler</li>
+</ul></div>
+<div class="pack-footer"><div class="pack-price">$49 <span>one-time</span></div><a href="#" class="pack-btn" onclick="openModal('ecommerce')">Get This Pack</a></div></div>
+
+<div class="pack coming-soon"><div class="pack-header"><div class="pack-icon restaurant">&#x1F37D;</div><h3>Restaurant &amp; Local Services</h3><p class="pack-desc">Reservation management, review responses, staff scheduling, and local marketing automation.</p></div>
+<div class="pack-workflows"><h4>Included Workflows</h4><ul class="wf-list">
+<li>Reservation confirmation + reminder</li>
+<li>AI review response for Google/Yelp/TripAdvisor</li>
+<li>Weekly specials social media poster</li>
+<li>Customer feedback intake + analysis</li>
+<li>Staff shift reminder system</li>
+<li>Local SEO content generator</li>
+</ul></div>
+<div class="pack-footer"><div class="pack-price" style="color:var(--text-muted)">$49 <span>one-time</span></div><span class="pack-btn">Coming Soon</span></div></div>
+
+</div></div></section>
+
+<section class="pricing" id="pricing"><div class="container">
+<div class="section-label">Pricing</div>
+<div class="section-title">One price. No subscriptions. No surprises.</div>
+<div class="pricing-grid">
+
+<div class="price-card"><h3>Single Pack</h3><p class="price-sub">One industry vertical</p><div class="price-amount">$49</div><p class="price-period">one-time purchase</p>
+<ul class="price-features"><li>4-6 production-ready n8n workflows</li><li>Step-by-step setup guide</li><li>Video walkthrough</li><li>Test scenarios included</li><li>Lifetime updates for this pack</li></ul>
+<a href="#packs" class="price-btn secondary">Choose a Pack</a></div>
+
+<div class="price-card featured"><div class="tag">BEST VALUE</div><h3>All-Access Bundle</h3><p class="price-sub">Every pack, current + future</p><div class="price-amount">$149</div><p class="price-period">one-time purchase</p>
+<ul class="price-features"><li>All current workflow packs (3+)</li><li>Every future pack added for free</li><li>Priority email support</li><li>Setup guides + video walkthroughs</li><li>Lifetime updates on all packs</li><li>Community Discord access</li></ul>
+<a href="#" class="price-btn primary" onclick="openModal('bundle')">Get All-Access</a></div>
+
+<div class="price-card"><h3>Custom Implementation</h3><p class="price-sub">Done-for-you setup</p><div class="price-amount">$500+</div><p class="price-period">per engagement</p>
+<ul class="price-features"><li>Any workflow pack installed for you</li><li>Custom modifications to fit your stack</li><li>API key setup + testing</li><li>1:1 training session</li><li>30-day post-install support</li></ul>
+<a href="#" class="price-btn secondary" onclick="openModal('custom')">Book a Call</a></div>
+
+</div></div></section>
+
+<section class="consultant" id="consultants"><div class="container">
+<div class="consultant-box">
+<div>
+<div class="section-label">For Consultants</div>
+<h2>Resell proven workflows under your brand</h2>
+<p>You're an automation consultant or agency. You know the value of these workflows &mdash; you build them from scratch every time. Stop rebuilding. Start reselling.</p>
+<ul class="consultant-perks">
+<li>White-label rights on all workflow packs</li>
+<li>Remove AutoPacks branding entirely</li>
+<li>Sell to your clients at whatever markup you choose</li>
+<li>New vertical packs added monthly</li>
+<li>Dedicated Slack channel for consultant licensees</li>
+<li>Early access to new workflows before public release</li>
+</ul>
+</div>
+<div class="consultant-cta">
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px">Consultant License</p>
+<div class="price-amount">$99<span style="font-size:0.9rem;font-weight:400;color:var(--text-muted)">/mo</span></div>
+<p class="price-period">Cancel anytime</p>
+<a href="#" class="btn-primary" onclick="openModal('consultant')">Apply for License</a>
+</div>
+</div></div></section>
+
+<section class="faq" id="faq"><div class="container">
+<div class="section-label" style="text-align:center">FAQ</div>
+<div class="section-title" style="text-align:center">Common questions</div>
+<div class="faq-list">
+<details class="faq-item"><summary>Do I need n8n to use these?</summary><p>Yes. AutoPacks workflows are built for n8n (self-hosted or n8n Cloud). You'll need a running n8n instance to import and use them. If you don't have one yet, our setup guide walks you through getting started with n8n Cloud in under 10 minutes.</p></details>
+<details class="faq-item"><summary>What if I need help setting them up?</summary><p>Every pack includes a detailed setup guide and video walkthrough. If you still get stuck, you can book a custom implementation session starting at $500 where we'll set everything up for you and walk you through how it all works.</p></details>
+<details class="faq-item"><summary>Can I modify the workflows?</summary><p>Absolutely. You get the raw n8n JSON files. Customize them however you want &mdash; add nodes, change logic, integrate with your existing tools. They're yours to modify.</p></details>
+<details class="faq-item"><summary>What APIs/services do the workflows connect to?</summary><p>It depends on the pack. Common integrations include OpenAI/Claude for AI, Twilio for SMS, Google Business Profile, various CRMs (HubSpot, GoHighLevel), Stripe, Shopify, and more. Each pack's page lists the exact services needed.</p></details>
+<details class="faq-item"><summary>Do I get updates when workflows are improved?</summary><p>Yes. When we update a workflow (to accommodate API changes, add features, or improve reliability), you'll get an email with the updated JSON file and a changelog. Lifetime updates are included with every purchase.</p></details>
+<details class="faq-item"><summary>Can I resell these to my clients?</summary><p>Not with a standard purchase. If you're an automation consultant or agency, check out our Consultant License ($99/mo) which includes white-label rights to resell under your own brand.</p></details>
+<details class="faq-item"><summary>What's your refund policy?</summary><p>If you can't get the workflows running within 14 days and our support team can't help resolve the issue, we'll refund your purchase in full. We'd rather you succeed than keep your money.</p></details>
+</div></div></section>
+
+<section class="final-cta"><div class="container">
+<h2>Stop building automations from scratch</h2>
+<p>Get production-ready workflows built by people who've deployed them for real businesses. Up and running this afternoon.</p>
+<div class="hero-buttons"><a href="#packs" class="btn-primary">Browse Workflow Packs</a></div>
+</div></section>
+
+<footer><div class="container">
+<p>AutoPacks by <a href="https://moteops.com" target="_blank">Mote Ops</a> &mdash; Fractional AI consulting for small business.</p>
+<p style="margin-top:8px">Questions? <a href="mailto:mikedmote@yahoo.com">mikedmote@yahoo.com</a></p>
+</div></footer>
+
+<div class="modal-overlay" id="modal"><div class="modal">
+<button class="modal-close" onclick="closeModal()">&times;</button>
+<h2 id="modal-title">Get Early Access</h2>
+<p class="modal-sub" id="modal-sub">Join the waitlist and be first to get this pack when it launches.</p>
+<form id="interest-form" action="https://formspree.io/f/placeholder" method="POST">
+<input type="hidden" name="pack" id="form-pack">
+<div class="form-group"><label for="form-name">Name</label><input type="text" id="form-name" name="name" placeholder="Your name" required></div>
+<div class="form-group"><label for="form-email">Email</label><input type="email" id="form-email" name="email" placeholder="you@company.com" required></div>
+<div class="form-group"><label for="form-business">Business Type</label><input type="text" id="form-business" name="business" placeholder="e.g. Dental office, Plumbing company"></div>
+<div class="form-group"><label for="form-n8n">Do you use n8n already?</label><select id="form-n8n" name="uses_n8n"><option value="">Select...</option><option value="yes-cloud">Yes &mdash; n8n Cloud</option><option value="yes-self">Yes &mdash; Self-hosted</option><option value="no-interested">No, but interested</option><option value="no-other">No, I use Make/Zapier</option></select></div>
+<button type="submit" class="form-submit">Join the Waitlist</button>
+<p class="form-note">No spam. We'll email you when your pack is ready to buy.</p>
+</form>
+</div></div>
+
+<script>
+const packLabels={dental:'Dental Office AI Stack',contractor:'Contractor Lead Pipeline',ecommerce:'E-commerce Ops Automator',bundle:'All-Access Bundle',consultant:'Consultant License',custom:'Custom Implementation'};
+function openModal(pack){event.preventDefault();document.getElementById('modal').classList.add('active');document.getElementById('form-pack').value=pack;const label=packLabels[pack]||pack;if(pack==='consultant'){document.getElementById('modal-title').textContent='Apply for Consultant License';document.getElementById('modal-sub').textContent="Tell us about your consulting practice and we'll get you set up with white-label access.";}else if(pack==='custom'){document.getElementById('modal-title').textContent='Book Implementation';document.getElementById('modal-sub').textContent='Tell us about your business and we\'ll reach out to schedule a setup session.';}else{document.getElementById('modal-title').textContent='Get '+label;document.getElementById('modal-sub').textContent="Join the early access list. We'll email you a purchase link as soon as this pack is live.";}document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow='';}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+document.getElementById('interest-form').addEventListener('submit',function(e){e.preventDefault();const form=e.target;const data=new FormData(form);const entries=JSON.parse(localStorage.getItem('autopacks_leads')||'[]');const entry={};data.forEach((val,key)=>entry[key]=val);entry.timestamp=new Date().toISOString();entries.push(entry);localStorage.setItem('autopacks_leads',JSON.stringify(entries));form.innerHTML='<div style="text-align:center;padding:40px 0"><div style="font-size:2rem;margin-bottom:12px">\u2713</div><h3 style="margin-bottom:8px">You\'re on the list!</h3><p style="color:var(--text-muted);font-size:0.9rem">We\'ll email you as soon as this is ready to purchase.</p></div>';});
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){const target=document.querySelector(this.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}});});
+</script>
+</body>
+</html>
