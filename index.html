@@ -131,6 +131,11 @@ footer a { color: var(--accent-light); }
 .form-note { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 12px; }
 @media (max-width: 768px) { nav ul { display: none; } .consultant-box { grid-template-columns: 1fr; } .pack-grid { grid-template-columns: 1fr; } }
 </style>
+<meta property="og:title" content="AutoPacks — Pre-Built AI Automation Workflows">
+<meta property="og:description" content="Ready-made n8n automation workflows for your industry. Dental, contractors, e-commerce, local services. Plug in API keys and go.">
+<meta property="og:type" content="website">
+<script defer data-domain="mikedmote52.github.io" src="https://plausible.io/js/script.js"></script>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzFhMWEyZSIvPjxwYXRoIGQ9Ik0xOCA0TDggMThoNmwtMiAxMCAxMC0xNGgtNnoiIGZpbGw9IiMzYjgyZjYiLz48L3N2Zz4=">
 </head>
 <body>
 <nav><div class="container"><div class="logo">Auto<span>Packs</span></div><ul><li><a href="#packs">Packs</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#consultants">For Consultants</a></li><li><a href="#faq">FAQ</a></li></ul><a href="#packs" class="nav-cta">Browse Packs</a></div></nav>
@@ -282,7 +287,10 @@ footer a { color: var(--accent-light); }
 <button class="modal-close" onclick="closeModal()">&times;</button>
 <h2 id="modal-title">Get Early Access</h2>
 <p class="modal-sub" id="modal-sub">Join the waitlist and be first to get this pack when it launches.</p>
-<form id="interest-form" action="https://formspree.io/f/placeholder" method="POST">
+<form id="interest-form" action="https://formsubmit.co/mikedmote@yahoo.com" method="POST">
+<input type="hidden" name="_subject" value="New Lead: AutoPacks">
+<input type="hidden" name="_captcha" value="false">
+<input type="text" name="_honey" style="display:none">
 <input type="hidden" name="pack" id="form-pack">
 <div class="form-group"><label for="form-name">Name</label><input type="text" id="form-name" name="name" placeholder="Your name" required></div>
 <div class="form-group"><label for="form-email">Email</label><input type="email" id="form-email" name="email" placeholder="you@company.com" required></div>
